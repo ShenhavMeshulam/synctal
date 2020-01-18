@@ -1,0 +1,4 @@
+synctal-client/node_modules
+synctal-server/node_modules
+.DS_Store
+dist
