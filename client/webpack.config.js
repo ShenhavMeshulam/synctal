@@ -11,7 +11,7 @@ module.exports = {
         path: DIST_DIR,
         publicPath: '/',
         filename: 'bundle.js'
-      },
+    },
     module: {
         rules: [
             {
@@ -20,8 +20,15 @@ module.exports = {
                 use: {
                     loader: 'babel-loader'
                 }
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
             }
         ]
+    },
+    resolve: {
+        extensions: ['.js', '.jsx', '.css']
     },
     plugins: [
         new HtmlWebpackPlugin({

@@ -1,5 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Box from '@material-ui/core/Box'
+import { makeStyles } from '@material-ui/core/styles';
+
+import Header from './Header';
+import HomePage from './HomePage/HomePage';
+
+const useStyles = makeStyles(() => ({
+
+}));
 
 export default () => {
-    return (<div><h1>nxnxnxnnxnxn</h1></div>);
-};
+  const classes = useStyles();
+
+  return (
+    <Box>
+      <Header />
+      <HomePage/>
+    </Box>
+  );
+}
