@@ -9,7 +9,7 @@ Work log management system for Talker company
 	* The number of hours worked by the worker
 
 # Future
-* translate work logs file to word files
+* Translate work logs file to word files
 
 # Technology
 * Frontend - ReactJS
