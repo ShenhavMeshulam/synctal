@@ -19,14 +19,14 @@ const useStyles = makeStyles(theme => ({
     width: drawerWidth,
     height: '100%',
     flexShrink: 0,
-    whiteSpace: 'nowrap',
+    whiteSpace: 'nowrap'
   },
   drawerOpen: {
-    width: drawerWidth,
     transition: theme.transitions.create('width', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
     }),
+    width: drawerWidth
   },
   drawerClose: {
     transition: theme.transitions.create('width', {
@@ -34,10 +34,7 @@ const useStyles = makeStyles(theme => ({
       duration: theme.transitions.duration.leavingScreen,
     }),
     overflowX: 'hidden',
-    width: theme.spacing(7) + 1,
-    [theme.breakpoints.up('sm')]: {
-      width: theme.spacing(7) + 1,
-    },
+    width: theme.spacing(7) + 1
   },
 }));
 

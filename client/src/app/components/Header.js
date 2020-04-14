@@ -8,6 +8,13 @@ const useStyles = makeStyles(() => ({
     display: 'flax',
     width: '100%',
     height: '4rem',
+  },
+  iconButton: {
+    color: 'white',
+    padding: '16px'
+  },
+  toolbar: {
+    padding: '0px'
   }
 }));
 
@@ -16,8 +23,8 @@ export default ({ OnSidenavButtonClick }) => {
 
   return (
     <AppBar position="static" className={classes.appBar}>
-      <Toolbar>
-        <IconButton onClick={OnSidenavButtonClick}>
+      <Toolbar className={classes.toolbar}>
+        <IconButton onClick={OnSidenavButtonClick} className={classes.iconButton}>
           <MenuIcon />
         </IconButton>
         <Typography variant="h6">
