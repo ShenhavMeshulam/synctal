@@ -63,7 +63,7 @@ export default ({ isOpen }) => {
       })}
     >
       <List>
-        {menuItems.map((menuItem, index) => (
+        {menuItems.map((menuItem) => (
           <ListItem button key={menuItem.text}>
             <ListItemIcon>
               {menuItem.icon}
@@ -76,3 +76,5 @@ export default ({ isOpen }) => {
     </Box>
   );
 }
+
+

@@ -30,6 +30,9 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx', '.css']
     },
+    devServer: {
+        historyApiFallback: true,
+    },
     plugins: [
         new HtmlWebpackPlugin({
             template: SRC_DIR + '/index.html'
