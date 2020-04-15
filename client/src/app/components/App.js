@@ -17,6 +17,11 @@ const useStyles = makeStyles(() => ({
     display: 'flex',
     flexDirection: 'row',
     height: '100%'
+  },
+  homePage: {
+    paddingLeft: '50px',
+    width: '100%',
+    height: '100%'
   }
 }));
 
@@ -34,7 +39,7 @@ export default () => {
       <Header OnSidenavButtonClick={handleSidenavClickButton} />
       <div className={classes.contet}>
         <Menu isOpen={sidenavOpen} />
-        <HomePage />
+        <HomePage className={classes.homePage} />
       </div>
     </Box>
   );
