@@ -1,15 +1,15 @@
 import React from 'react';
 import clsx from 'clsx';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import Divider from '@material-ui/core/Divider';
-
+import DescriptionIcon from '@material-ui/icons/Description';
+import PermContactCalendarIcon from '@material-ui/icons/PermContactCalendar';
+import PlaceIcon from '@material-ui/icons/Place';
 
 const drawerWidth = 240;
 
@@ -40,8 +40,21 @@ const useStyles = makeStyles(theme => ({
 
 export default ({ isOpen }) => {
   const classes = useStyles();
-  console.log(isOpen);
-
+  const menuItems = [
+    {
+      text: 'Work logs',
+      icon: <DescriptionIcon />
+    },
+    {
+      text: 'Workers',
+      icon: <PermContactCalendarIcon />
+    },
+    {
+      text: 'Work places',
+      icon: <PlaceIcon />
+    },
+  ]
+  console.log({ menuItems })
   return (
     <Box
       className={clsx(classes.drawer, {
@@ -50,10 +63,12 @@ export default ({ isOpen }) => {
       })}
     >
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
+        {menuItems.map((menuItem, index) => (
+          <ListItem button key={menuItem.text}>
+            <ListItemIcon>
+              {menuItem.icon}
+            </ListItemIcon>
+            <ListItemText primary={menuItem.text} />
           </ListItem>
         ))}
       </List>
