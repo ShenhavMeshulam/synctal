@@ -7,10 +7,8 @@ import Login from './Login';
 export default () => {
     return (
         <Router>
-            <div>
-                <Route path="/" component={App} />
-                <Route path="/login" component={Login} />
-            </div>
+            <Route exact path="/" component={App} />
+            <Route path="/login" component={Login} />
         </Router>
     );
 }
