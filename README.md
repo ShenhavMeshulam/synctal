@@ -1,5 +1,5 @@
 # Synctal
-Work log management system for Talker company
+Work log management system 
 
 * Saving work log files
 * For each work log save the team that for in this day 
@@ -14,5 +14,4 @@ Work log management system for Talker company
 # Technology
 * Frontend - ReactJS
 * Backend - NodeJS
-* DB - Mongo
-
+* DB - FireBase
