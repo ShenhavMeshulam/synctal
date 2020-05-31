@@ -54,7 +54,7 @@ export default ({ isOpen }) => {
       icon: <PlaceIcon />
     },
   ]
-  console.log({ menuItems })
+
   return (
     <Box
       className={clsx(classes.drawer, {
