@@ -1,5 +1,7 @@
 import React from 'react';
+// import axios from 'axios';
 
 export default ({ className }) => {
-    return (<div className={className}><h1>Sites page</h1></div>);
+    // var c = axios.get('http://localhost:3000')
+    return (<div className={className}><h1>{c}</h1></div>);
 };
