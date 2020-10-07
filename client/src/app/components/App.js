@@ -6,6 +6,11 @@ import Header from './Header';
 import Menu from './Menu';
 import HomePage from './HomePage/HomePage';
 
+import { Route, BrowserRouter as Router } from 'react-router-dom';
+import WorkLogs from './WorkLogs/WorkLogs';
+import Workers from './Workers/Workers';
+import Sites from './Sites/Sites';
+
 const useStyles = makeStyles(() => ({
   app: {
     display: 'flex',
@@ -35,12 +40,18 @@ export default () => {
 
   //useContext???
   return (
-    <Box className={classes.app}>
-      <Header OnSidenavButtonClick={handleSidenavClickButton} />
-      <div className={classes.contet}>
-        <Menu isOpen={sidenavOpen} />
-        <HomePage className={classes.homePage} />
-      </div>
-    </Box>
+    <Router>
+
+      <Box className={classes.app}>
+        <Header OnSidenavButtonClick={handleSidenavClickButton} />
+        <div className={classes.contet}>
+          <Menu isOpen={sidenavOpen} />
+          <Route exact path="/" component={HomePage} />
+          <Route path="/WorkLogs" component={WorkLogs} />
+          <Route path="/Workers" component={Workers} />
+          <Route path="/Sites" component={Sites} />
+        </div>
+      </Box>
+    </Router>
   );
 }

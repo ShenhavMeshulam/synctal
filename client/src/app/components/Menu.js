@@ -7,9 +7,9 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
-import DescriptionIcon from '@material-ui/icons/Description';
-import PermContactCalendarIcon from '@material-ui/icons/PermContactCalendar';
-import PlaceIcon from '@material-ui/icons/Place';
+import { Link } from 'react-router-dom';
+
+import MenuItems from "./MenuItems";
 
 const drawerWidth = 240;
 
@@ -26,6 +26,7 @@ const useStyles = makeStyles(theme => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
     }),
+    overflowX: 'hidden',
     width: drawerWidth
   },
   drawerClose: {
@@ -40,32 +41,18 @@ const useStyles = makeStyles(theme => ({
 
 export default ({ isOpen }) => {
   const classes = useStyles();
-  const menuItems = [
-    {
-      text: 'Work logs',
-      icon: <DescriptionIcon />
-    },
-    {
-      text: 'Workers',
-      icon: <PermContactCalendarIcon />
-    },
-    {
-      text: 'Work places',
-      icon: <PlaceIcon />
-    },
-  ]
 
   return (
     <Box
       className={clsx(classes.drawer, {
-        [classes.drawerOpen]: false,
+        [classes.drawerOpen]: isOpen,
         [classes.drawerClose]: !isOpen,
       })}
     >
       <List>
-        {menuItems.map((menuItem) => (
-          <ListItem button key={menuItem.text}>
-            <ListItemIcon>
+        {MenuItems.map((menuItem) => (
+          <ListItem button component={Link} to={menuItem.route} key={menuItem.text}>
+            <ListItemIcon >
               {menuItem.icon}
             </ListItemIcon>
             <ListItemText primary={menuItem.text} />
@@ -76,5 +63,3 @@ export default ({ isOpen }) => {
     </Box>
   );
 }
-
-
