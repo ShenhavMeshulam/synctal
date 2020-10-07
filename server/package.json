@@ -8,7 +8,5 @@
   },
   "author": "Shenhav Meshulam",
   "license": "ISC",
-  "dependencies": {
-    "firebase": "^7.15.0"
-  }
+  "dependencies": {}
 }
